@@ -1,5 +1,5 @@
 NetworkX
-========
+=========
 
 .. image:: https://img.shields.io/pypi/v/networkx.svg
    :target: https://pypi.org/project/networkx/
