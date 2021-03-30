@@ -12,7 +12,7 @@ def greedy_path(G, source, target, heuristic=None, weight='weight'):
     current_node=source
 
     while True:
-        #if I arrived to the targer, return the path
+        #if I arrived to the target, return the path
         if current_node == target:
             path.append(current_node)
             return path
@@ -24,8 +24,8 @@ def greedy_path(G, source, target, heuristic=None, weight='weight'):
         listOfNode=list(G[current_node])
         listOfNode=list(filter(lambda x: x not in path, listOfNode))
 
-        #if the list is empty then the path does not exist.
-        #if it is not empty apply the heuristic function to all the elements to detect most attractive as current_node for the next iteration
+        #the path does not exist if there are not neighbors
+        #if there are neighbors apply the heuristic function to them to detect most attractive as current_node for the next iteration
         if len(listOfNode)==0:
             msg = f"Node {target} not reachable from {source}"
             raise nx.NetworkXNoPath(msg)
